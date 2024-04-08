@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
-const Estimations = () => {
+const Estimations = (props) => {
+  const { language } = props; 
+
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -38,12 +40,11 @@ const Estimations = () => {
 
   return (
     <div style={{ height: '400px', overflow: 'scroll' }}>
-      <h2 style={{ fontStyle: 'italic' }} onClick={handleTabClick}>Estimations</h2>
+      <h2 style={{ fontStyle: 'italic' }} onClick={handleTabClick}>{language === 'en' ? 'Construction Estimation/Expenses' : 'గుడి నిర్మాణ వ్యయం అంచనా'}</h2>
       {loading && <p>Loading data...</p>}
       {error && <p>Error: {error}</p>}
       {data.length > 0 && (
         <div>
-          <p>Data fetched successfully:</p>
           <table>
             <thead>
               <tr>

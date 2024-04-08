@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-const DataTab = () => {
+const DataTab = ({language }) => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [total, setTotal] = useState(0);
-
+ 
 
   const fetchData = async () => {
     setLoading(true);
@@ -37,14 +37,14 @@ const DataTab = () => {
     }
   };
 
+
   return (
     <div style={{ height: '400px', overflow: 'scroll' }}>
-      <h2 style={{ fontStyle: 'italic' }} onClick={handleTabClick}>Donaters list</h2>
+      <h2 style={{ fontStyle: 'italic' }} onClick={handleTabClick}>{language === 'en' ? 'List of Donations/Status' : 'చందా ఇచ్చు వారి వివరాలు'}</h2>
       {loading && <p>Loading data...</p>}
       {error && <p>Error: {error}</p>}
       {data.length > 0 && (
         <div>
-          <p>Data fetched successfully:</p>
           <table>
             <thead>
               <tr>

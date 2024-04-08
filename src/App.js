@@ -3,7 +3,9 @@ import DataTab from './DataTab'; // Assuming DataTab is in the same directory
 import Estimations from './Estimations'; 
 import './App.css';
 import backgroundImage from './Mahankali.jpeg';
+import { translationsEN, translationsTE } from './translation';
 
+// English translations
 const Ribbon = ({ children }) => (
   <div style={{
     backgroundColor: 'rgba(60, 50, 19, 0.58)',
@@ -24,6 +26,7 @@ const App = () => {
   const [data, setData] = useState(null);
   const [estimations, setEstimations] = useState(null);
   const [total, setTotal] = useState(null);
+  const [language, setLanguage] = useState('en'); // Default language is English
 
   useEffect(() => {
     if (showEstimationsTab) {
@@ -66,6 +69,11 @@ const App = () => {
     setShowEstimationsTab(true);
     setShowTotalChanda(false);
   };
+
+  const toggleLanguage = () => {
+    setLanguage(language === 'en' ? 'te' : 'en'); // Toggle between English and Telugu
+  };
+
   return (
     
     <div style={{ 
@@ -87,13 +95,16 @@ const App = () => {
         maxWidth: '300',
         textAlign: 'center',
       }}>
-      <h1>Nuvvulabanda Mahankali Temple<br></br> Construction Details</h1>
+      <h1>{language === 'en' ? translationsEN.title : translationsTE.title}</h1>
       <Ribbon>
-      <button onClick={handleDataTabClick} style={{ fontWeight: showDataTab ? 'bold' : 'normal' }}>Chanda Collection</button>
-          <button onClick={handleEstimationsTabClick} style={{ fontWeight: showEstimationsTab ? 'bold' : 'normal' }}>Construction Estimations</button>
+      <button onClick={handleDataTabClick} style={{ fontWeight: showDataTab ? 'bold' : 'normal' }}>{language === 'en' ? translationsEN.chandaCollection : translationsTE.chandaCollection}</button>
+      <button onClick={handleEstimationsTabClick} style={{ fontWeight: showEstimationsTab ? 'bold' : 'normal' }}>{language === 'en' ? translationsEN.constructionEstimations : translationsTE.constructionEstimations}</button>
+      <button onClick={toggleLanguage}>{language === 'en' ? translationsEN.toggleButton : translationsTE.toggleButton}</button>
       </Ribbon>
-      {showDataTab && data && <DataTab data={data} />}
-      {showEstimationsTab && estimations && <Estimations estimations={estimations} />}
+ 
+      {showDataTab && data && <DataTab data={data} language={language}/>}
+      {showEstimationsTab && estimations && <Estimations estimations={estimations} language={language}/>}
+      
     </div>
     </div>
   );
