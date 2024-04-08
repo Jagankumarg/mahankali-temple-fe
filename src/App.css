@@ -1,10 +1,13 @@
 
 
 .content {
-  background-color: rgba(52, 52, 52, 0.8); /* Add semi-transparent white background for content */
+  background-color: rgba(34, 9, 19, 0.17); /* Add semi-transparent white background for content */
   padding: 20px;
   border-radius: 10px;
   max-width: 600px; /* Limit content width */
   text-align: center;
 }
 
+.body {
+  font-family: 'Noto Sans Telugu', sans-serif;
+}

@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import DataTab from './DataTab'; // Assuming DataTab is in the same directory
 import Estimations from './Estimations'; 
 import './App.css';
+import backgroundImage from './Mahankali.jpeg';
+
 const Ribbon = ({ children }) => (
   <div style={{
-    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+    backgroundColor: 'rgba(60, 50, 19, 0.58)',
     padding: '10px',
     borderRadius: '5px',
     display: 'flex',
@@ -16,10 +18,12 @@ const Ribbon = ({ children }) => (
 );
 
 const App = () => {
-  const [showDataTab, setShowDataTab] = useState(true);
+  const [showDataTab, setShowDataTab] = useState(false);
   const [showEstimationsTab, setShowEstimationsTab] = useState(false);
+  const [showTotalChanda, setShowTotalChanda] = useState(false);
   const [data, setData] = useState(null);
   const [estimations, setEstimations] = useState(null);
+  const [total, setTotal] = useState(null);
 
   useEffect(() => {
     if (showEstimationsTab) {
@@ -41,21 +45,34 @@ const App = () => {
     }
   }, [showDataTab]);
 
+  useEffect(() => {
+    if (showDataTab) {
+      // Make API call for DataTab
+      fetch('http://localhost:8080/chandaDonatorsList')
+        .then(response => response.json())
+        .then(data => setData(data))
+        .catch(error => console.error('Error fetching data:', error));
+    }
+  }, [showDataTab]);
+
   const handleDataTabClick = () => {
     setShowDataTab(true);
+    setShowTotalChanda(true);
     setShowEstimationsTab(false);
   };
 
   const handleEstimationsTabClick = () => {
     setShowDataTab(false);
     setShowEstimationsTab(true);
+    setShowTotalChanda(false);
   };
   return (
     
     <div style={{ 
-      backgroundImage: "url('C://Users//Sahithi//Documents//application//mahankali-temple//src//Mahankali.jpeg'), linear-gradient(orange, orange)",
-      backgroundSize: 'cover',
-      backgroundRepeat: 'no-repeat',
+      backgroundImage: `url(${backgroundImage}), linear-gradient(orange, orange)`,
+     
+    
+      backgroundPosition: 'center',
       height: '100vh',
       display: 'flex',
       justifyContent: 'center',
@@ -67,13 +84,13 @@ const App = () => {
         backgroundColor: 'rgba(255, 255, 255, 0.8)',
         padding: '20px',
         borderRadius: '10px',
-        maxWidth: '600px',
+        maxWidth: '300',
         textAlign: 'center',
       }}>
-      <h1>Nuvvulabanda Mahankali Temple Construction</h1>
+      <h1>Nuvvulabanda Mahankali Temple<br></br> Construction Details</h1>
       <Ribbon>
-      <button onClick={handleDataTabClick} style={{ fontWeight: showDataTab ? 'bold' : 'normal' }}>Data Tab</button>
-          <button onClick={handleEstimationsTabClick} style={{ fontWeight: showEstimationsTab ? 'bold' : 'normal' }}>Estimations Tab</button>
+      <button onClick={handleDataTabClick} style={{ fontWeight: showDataTab ? 'bold' : 'normal' }}>Chanda Collection</button>
+          <button onClick={handleEstimationsTabClick} style={{ fontWeight: showEstimationsTab ? 'bold' : 'normal' }}>Construction Estimations</button>
       </Ribbon>
       {showDataTab && data && <DataTab data={data} />}
       {showEstimationsTab && estimations && <Estimations estimations={estimations} />}
