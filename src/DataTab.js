@@ -40,7 +40,7 @@ const DataTab = ({language }) => {
 
   return (
     <div style={{ height: '400px', overflow: 'scroll' }}>
-      <h2 style={{ fontStyle: 'italic' , textAlign: 'center', cursor: 'pointer' }} onClick={handleTabClick}>{language === 'en' ? 'List of Donations/Status' : 'చందా ఇచ్చు వారి వివరాలు'}</h2>
+      <h2 style={{ fontStyle: 'italic' , textAlign: 'center', cursor: 'pointer',textDecoration: 'underline' }} onClick={handleTabClick}>{language === 'en' ? 'List of Donations/Status' : 'చందా ఇచ్చు వారి వివరాలు'}</h2>
       {loading && <p>Loading data...</p>}
       {error && <p>Error: {error}</p>}
       {data.length > 0 && (
@@ -62,13 +62,13 @@ const DataTab = ({language }) => {
             <tbody>
               {data.map(item => (
                 <tr key={item.id}>
-                  <td style={{ border: '1px solid black', textAlign: 'center', padding: '8px' }}>{item.id}</td>
-                  <td style={{ border: '1px solid black', textAlign: 'center' , padding: '8px',wordWrap: 'break-word', whiteSpace: 'normal'}}>{item.name}</td>
-                  <td style={{ border: '1px solid black', textAlign: 'center' , padding: '8px',wordWrap: 'break-word', whiteSpace: 'normal'}}>{item.address}</td>
-                  <td style={{ border: '1px solid black',  textAlign: 'center' , padding: '8px'}}>{item.amount}</td>
-                  <td style={{ border: '1px solid black',  textAlign: 'center', padding: '8px' }}>{item.status}</td>
-                  <td style={{ border: '1px solid black',  textAlign: 'center', padding: '8px', wordWrap: 'break-word', whiteSpace: 'normal'}}>{item.comments}</td>
-                  <td style={{ border: '1px solid black',  textAlign: 'center', padding: '8px' }}>{item.phoneNumber}</td>
+                  <td style={{ border: '1px solid black', textAlign: 'center', padding: '10px' }}>{item.id}</td>
+                  <td style={{ border: '1px solid black', textAlign: 'center' , padding: '10px',wordWrap: 'break-word', whiteSpace: 'normal'}}>{item.name}</td>
+                  <td style={{ border: '1px solid black', textAlign: 'center' , padding: '10px',wordWrap: 'break-word', whiteSpace: 'normal'}}>{item.address}</td>
+                  <td style={{ border: '1px solid black',  textAlign: 'center' , padding: '10px'}}>{item.amount}</td>
+                  <td style={{ border: '1px solid black',  textAlign: 'center', padding: '10px' }}>{item.status}</td>
+                  <td style={{ border: '1px solid black',  textAlign: 'center', padding: '10px', wordWrap: 'break-word', whiteSpace: 'normal'}}>{item.comments}</td>
+                  <td style={{ border: '1px solid black',  textAlign: 'center', padding: '10px' }}>{item.phoneNumber}</td>
                   {/* Add more cells as needed */}
                 </tr>
               ))}

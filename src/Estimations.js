@@ -40,7 +40,7 @@ const Estimations = (props) => {
 
   return (
     <div style={{ height: '400px', overflow: 'scroll' }}>
-      <h2 style={{ fontStyle: 'italic' }} onClick={handleTabClick}>{language === 'en' ? 'Construction Estimation/Expenses' : 'గుడి నిర్మాణ వ్యయం అంచనా'}</h2>
+      <h2 style={{ fontStyle: 'italic',textDecoration: 'underline', cursor: 'pointer' }}  onClick={handleTabClick}>{language === 'en' ? 'Construction Estimation/Expenses' : 'గుడి నిర్మాణ వ్యయం అంచనా'}</h2>
       {loading && <p>Loading data...</p>}
       {error && <p>Error: {error}</p>}
       {data.length > 0 && (
