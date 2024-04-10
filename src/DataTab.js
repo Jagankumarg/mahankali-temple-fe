@@ -63,11 +63,11 @@ const DataTab = ({language }) => {
               {data.map(item => (
                 <tr key={item.id}>
                   <td style={{ border: '1px solid black', textAlign: 'center', padding: '8px' }}>{item.id}</td>
-                  <td style={{ border: '1px solid black', textAlign: 'center' , padding: '8px'}}>{item.name}</td>
-                  <td style={{ border: '1px solid black', textAlign: 'center' , padding: '8px'}}>{item.address}</td>
+                  <td style={{ border: '1px solid black', textAlign: 'center' , padding: '8px',wordWrap: 'break-word', whiteSpace: 'normal'}}>{item.name}</td>
+                  <td style={{ border: '1px solid black', textAlign: 'center' , padding: '8px',wordWrap: 'break-word', whiteSpace: 'normal'}}>{item.address}</td>
                   <td style={{ border: '1px solid black',  textAlign: 'center' , padding: '8px'}}>{item.amount}</td>
                   <td style={{ border: '1px solid black',  textAlign: 'center', padding: '8px' }}>{item.status}</td>
-                  <td style={{ border: '1px solid black',  textAlign: 'center', padding: '8px' }}>{item.comments}</td>
+                  <td style={{ border: '1px solid black',  textAlign: 'center', padding: '8px', wordWrap: 'break-word', whiteSpace: 'normal'}}>{item.comments}</td>
                   <td style={{ border: '1px solid black',  textAlign: 'center', padding: '8px' }}>{item.phoneNumber}</td>
                   {/* Add more cells as needed */}
                 </tr>
