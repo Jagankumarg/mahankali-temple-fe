@@ -11,3 +11,17 @@
 .body {
   font-family: 'Noto Sans Telugu', sans-serif;
 }
+
+@media screen and (max-width: 768px) {
+  .App-header {
+    padding: 10px;
+  }
+
+  .App-header h1 {
+    font-size: 20px;
+  }
+
+  .App-content {
+    padding: 10px;
+  }
+}
