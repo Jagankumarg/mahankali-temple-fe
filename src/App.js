@@ -31,7 +31,7 @@ const App = () => {
   useEffect(() => {
     if (showEstimationsTab) {
       // Make API call for EstimationsTab
-      fetch('http://localhost:8080/chandaDonatorsList')
+      fetch('https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/chandaDonatorsList')
         .then(response => response.json())
         .then(data => setEstimations(data))
         .catch(error => console.error('Error fetching estimations:', error));
@@ -41,7 +41,7 @@ const App = () => {
   useEffect(() => {
     if (showDataTab) {
       // Make API call for DataTab
-      fetch('http://localhost:8080/chandaDonatorsList')
+      fetch('https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/chandaDonatorsList')
         .then(response => response.json())
         .then(data => setData(data))
         .catch(error => console.error('Error fetching data:', error));
@@ -51,7 +51,7 @@ const App = () => {
   useEffect(() => {
     if (showDataTab) {
       // Make API call for DataTab
-      fetch('http://localhost:8080/chandaDonatorsList')
+      fetch('https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/chandaDonatorsList')
         .then(response => response.json())
         .then(data => setData(data))
         .catch(error => console.error('Error fetching data:', error));

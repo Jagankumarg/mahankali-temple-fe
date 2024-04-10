@@ -10,14 +10,14 @@ const DataTab = ({language }) => {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:8080/chandaDonatorsList');
+      const response = await fetch('https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/chandaDonatorsList');
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }
       const responseData = await response.json();
       setData(responseData);
      // Fetch total value
-     const totalResponse = await fetch('http://localhost:8080/totalDonations');
+     const totalResponse = await fetch('https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/totalDonations');
      if (!totalResponse.ok) {
        throw new Error('Failed to fetch total');
      }

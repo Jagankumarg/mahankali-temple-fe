@@ -11,14 +11,14 @@ const Estimations = (props) => {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:8080/estimations');
+      const response = await fetch('https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/estimations');
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }
       const responseData = await response.json();
       setData(responseData);
      // Fetch total value
-     const totalResponse = await fetch('http://localhost:8080/estimationsTotal');
+     const totalResponse = await fetch('https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/estimationsTotal');
      if (!totalResponse.ok) {
        throw new Error('Failed to fetch total');
      }
