@@ -45,30 +45,30 @@ const DataTab = ({language }) => {
       {error && <p>Error: {error}</p>}
       {data.length > 0 && (
         <div>
-          {/* <table style={{ minWidth: '100px', tableLayout: 'fixed', width: '100%'}}> */}
-          <table style={{ minWidth: '100%', tableLayout: 'fixed', borderCollapse: 'collapse' }}>
+          <table style={{ minWidth: '100px', tableLayout: 'fixed', width: '100%'}}>
+          
             <thead>
               <tr>
-                <th style={{ border: '1px solid black' }}>Sl no</th>
-                <th style={{ border: '1px solid black' }}>Name</th>
-                <th style={{ border: '1px solid black' }}>Address</th>
-                <th style={{ border: '1px solid black' }}>Amount</th>
-                <th style={{ border: '1px solid black' }}>Status</th>
-                <th style={{ border: '1px solid black' }}>Comments</th>
-                <th style={{ border: '1px solid black' }}>Phone No</th>
+                <th style={{ border: '1px solid black' , textAlign: 'center', padding: '8px'}}>Sl no</th>
+                <th style={{ border: '1px solid black', textAlign: 'center', padding: '8px' }}>Name</th>
+                <th style={{ border: '1px solid black', textAlign: 'center', padding: '8px' }}>Address</th>
+                <th style={{ border: '1px solid black', textAlign: 'center', padding: '8px' }}>Amount</th>
+                <th style={{ border: '1px solid black', textAlign: 'center', padding: '8px' }}>Status</th>
+                <th style={{ border: '1px solid black', textAlign: 'center', padding: '8px' }}>Comments</th>
+                <th style={{ border: '1px solid black' , textAlign: 'center', padding: '8px'}}>Phone No</th>
                 {/* Add more columns as needed */}
               </tr>
             </thead>
             <tbody>
               {data.map(item => (
                 <tr key={item.id}>
-                  <td style={{ border: '1px solid black', textAlign: 'center' }}>{item.id}</td>
-                  <td style={{ border: '1px solid black', textAlign: 'center' }}>{item.name}</td>
-                  <td style={{ border: '1px solid black', textAlign: 'center' }}>{item.address}</td>
-                  <td style={{ border: '1px solid black',  textAlign: 'center' }}>{item.amount}</td>
-                  <td style={{ border: '1px solid black',  textAlign: 'center' }}>{item.status}</td>
-                  <td style={{ border: '1px solid black',  textAlign: 'center' }}>{item.comments}</td>
-                  <td style={{ border: '1px solid black',  textAlign: 'center' }}>{item.phoneNumber}</td>
+                  <td style={{ border: '1px solid black', textAlign: 'center', padding: '8px' }}>{item.id}</td>
+                  <td style={{ border: '1px solid black', textAlign: 'center' , padding: '8px'}}>{item.name}</td>
+                  <td style={{ border: '1px solid black', textAlign: 'center' , padding: '8px'}}>{item.address}</td>
+                  <td style={{ border: '1px solid black',  textAlign: 'center' , padding: '8px'}}>{item.amount}</td>
+                  <td style={{ border: '1px solid black',  textAlign: 'center', padding: '8px' }}>{item.status}</td>
+                  <td style={{ border: '1px solid black',  textAlign: 'center', padding: '8px' }}>{item.comments}</td>
+                  <td style={{ border: '1px solid black',  textAlign: 'center', padding: '8px' }}>{item.phoneNumber}</td>
                   {/* Add more cells as needed */}
                 </tr>
               ))}
