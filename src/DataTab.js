@@ -45,7 +45,7 @@ const DataTab = ({language }) => {
       {error && <p>Error: {error}</p>}
       {data.length > 0 && (
         <div style={{ overflowX: 'auto', width: '100%' }}>
-          <table style={{ minWidth: '100px', tableLayout: 'fixed', whiteSpace: 'nowrap'}}>
+          <table style={{ minWidth: '100px', tableLayout: 'fixed'}}>
             <thead>
               <tr>
                 <th style={{ border: '1px solid black', padding: '8px' }}>Sl no</th>
