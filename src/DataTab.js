@@ -44,7 +44,7 @@ const DataTab = ({language }) => {
       {loading && <p>Loading data...</p>}
       {error && <p>Error: {error}</p>}
       {data.length > 0 && (
-        <div style={{overflowScrolling: 'touch', WebkitOverflowScrolling: 'touch' }}/* style={{ overflowX: 'auto', maxWidth: '100%', overflowScrolling: 'touch', WebkitOverflowScrolling: 'touch' }} */>
+        <div style={{ overflowX: 'auto', maxWidth: '100%', overflowScrolling: 'touch', WebkitOverflowScrolling: 'touch' }}>
           <table /* style={{ minWidth: '100px', tableLayout: 'fixed', width: '100%'}} */>
             <thead>
               <tr>
