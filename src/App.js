@@ -7,16 +7,7 @@ import { translationsEN, translationsTE } from './translation';
 
 // English translations
 const Ribbon = ({ children }) => (
-  <div style={{
-    backgroundColor: 'rgba(60, 50, 19, 0.58)',
-    padding: '10px',
-    borderRadius: '5px',
-    display: 'flex',
-    justifyContent: 'space-around',
-    marginBottom: '20px',
-  }}>
-    {children}
-  </div>
+  <div className="ribbon">{children}</div>
 );
 
 const App = () => {
