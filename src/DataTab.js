@@ -39,13 +39,13 @@ const DataTab = ({language }) => {
 
 
   return (
-    <div style={{overflow: 'scroll', overflowX: 'scroll'}}>
+    <div style={{ overflowX: 'auto', overflowY: 'auto', maxHeight: '500px' }}>
       <h2 style={{ fontStyle: 'italic' , textAlign: 'center', cursor: 'pointer' }} onClick={handleTabClick}>{language === 'en' ? 'List of Donations/Status' : 'చందా ఇచ్చు వారి వివరాలు'}</h2>
       {loading && <p>Loading data...</p>}
       {error && <p>Error: {error}</p>}
       {data.length > 0 && (
         <div>
-          <table>
+          <table style={{ minWidth: '600px' }}>
             <thead>
               <tr>
                 <th style={{ border: '1px solid black', padding: '8px' }}>Sl no</th>
