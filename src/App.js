@@ -69,8 +69,6 @@ const App = () => {
     
     <div style={{ 
       backgroundImage: `url(${backgroundImage}), linear-gradient(orange, orange)`,
-     
-    
       backgroundPosition: 'center',
       height: '100vh',
       display: 'flex',
@@ -78,7 +76,9 @@ const App = () => {
       flexDirection: 'column',
       justifyContent: 'flex-start',
       alignItems: 'center',
+      padding: '20px',
     }}>
+
       <div style={{
         backgroundColor: 'rgba(255, 255, 255, 0.8)',
         padding: '20px',

@@ -12,16 +12,9 @@
   font-family: 'Noto Sans Telugu', sans-serif;
 }
 
-@media screen and (max-width: 768px) {
-  .App-header {
-    padding: 10px;
-  }
-
-  .App-header h1 {
-    font-size: 20px;
-  }
-
-  .App-content {
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 600px) {
+  .container {
     padding: 10px;
   }
 }
