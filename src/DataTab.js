@@ -49,13 +49,13 @@ const DataTab = ({language }) => {
           
             <thead>
               <tr>
-                <th style={{ border: '1px solid black' , textAlign: 'center', padding: '8px'}}>Sl no</th>
-                <th style={{ border: '1px solid black', textAlign: 'center', padding: '8px' }}>Name</th>
-                <th style={{ border: '1px solid black', textAlign: 'center', padding: '8px' }}>Address</th>
-                <th style={{ border: '1px solid black', textAlign: 'center', padding: '8px' }}>Amount</th>
-                <th style={{ border: '1px solid black', textAlign: 'center', padding: '8px' }}>Status</th>
-                <th style={{ border: '1px solid black', textAlign: 'center', padding: '8px' }}>Comments</th>
-                <th style={{ border: '1px solid black' , textAlign: 'center', padding: '8px'}}>Phone No</th>
+                <th style={{ border: '1px solid black' , textAlign: 'center', padding: '10px'}}>Sl no</th>
+                <th style={{ border: '1px solid black', textAlign: 'center', padding: '10px' }}>Name</th>
+                <th style={{ border: '1px solid black', textAlign: 'center', padding: '10px' }}>Address</th>
+                <th style={{ border: '1px solid black', textAlign: 'center', padding: '10px' }}>Amount</th>
+                <th style={{ border: '1px solid black', textAlign: 'center', padding: '10px' }}>Status</th>
+                <th style={{ border: '1px solid black', textAlign: 'center', padding: '10px' }}>Comments</th>
+                <th style={{ border: '1px solid black' , textAlign: 'center', padding: '10px'}}>Phone No</th>
                 {/* Add more columns as needed */}
               </tr>
             </thead>
