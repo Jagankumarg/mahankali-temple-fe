@@ -13,7 +13,7 @@ const Ribbon = ({ children }) => (
 const App = () => {
   const [showDataTab, setShowDataTab] = useState(false);
   const [showEstimationsTab, setShowEstimationsTab] = useState(false);
-  const [showTotalChanda, setShowTotalChanda] = useState(false);
+/*   const [showTotalChanda, setShowTotalChanda] = useState(false); */
   const [data, setData] = useState(null);
   const [estimations, setEstimations] = useState(null);
   const [total, setTotal] = useState(null);
@@ -39,7 +39,7 @@ const App = () => {
     }
   }, [showDataTab]);
 
-  useEffect(() => {
+/*   useEffect(() => {
     if (showDataTab) {
       // Make API call for DataTab
       fetch('https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/chandaDonatorsList')
@@ -48,17 +48,17 @@ const App = () => {
         .catch(error => console.error('Error fetching data:', error));
     }
   }, [showDataTab]);
-
+ */
   const handleDataTabClick = () => {
     setShowDataTab(true);
-    setShowTotalChanda(true);
+/*     setShowTotalChanda(true); */
     setShowEstimationsTab(false);
   };
 
   const handleEstimationsTabClick = () => {
     setShowDataTab(false);
     setShowEstimationsTab(true);
-    setShowTotalChanda(false);
+   /*  setShowTotalChanda(false); */
   };
 
   const toggleLanguage = () => {

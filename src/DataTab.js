@@ -5,6 +5,7 @@ const DataTab = ({language }) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [total, setTotal] = useState(0);
+  const [tab, setTab] = useState('List of Donations/Status');
  
 
   const fetchData = async () => {
@@ -31,16 +32,59 @@ const DataTab = ({language }) => {
     }
   };
 
-  const handleTabClick = () => {
-    if (data.length === 0) { // Fetch data only if it's not already fetched
-      fetchData();
+  const fetchMembershipsData = async () => {
+    setLoading(true);
+    try {
+      const membershipsResponse = await fetch('https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/memberShips');
+      if (!membershipsResponse.ok) {
+        throw new Error('Failed to fetch memberships data');
+      }
+      const membershipsData = await membershipsResponse.json();
+      setData(membershipsData);
+      // Fetch total for memberships
+      const membershipsTotalResponse = await fetch('https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/membershipsTotal');
+      if (!membershipsTotalResponse.ok) {
+        throw new Error('Failed to fetch memberships total');
+      }
+      const membershipsTotalData = await membershipsTotalResponse.json();
+      setTotal(membershipsTotalData.response);      
+
+      
+
+      setLoading(false);
+    } catch (error) {
+      setError(error.message);
+      setLoading(false);
     }
   };
+
+/*   const handleTabClick = () => {
+    if ( tab === 'List of Donations/Status' && data.length === 0) { // Fetch data only if it's not already fetched
+      fetchData();
+    }
+    if (tab === 'memberships' && data.length === 0) {
+      fetchMembershipsData();
+    }
+  }; */
+   const handleTabClick = (tab) => {
+    console.log('Tab clicked:', tab);
+    if (tab === 'memberships') {
+      fetchMembershipsData();
+    } else if (tab === 'List of Donations/Status') {
+      fetchData();
+    }
+  }; 
 
 
   return (
     <div style={{ height: '400px', overflow: 'scroll' }}>
-      <h2 style={{ fontStyle: 'italic' , textAlign: 'center', cursor: 'pointer',textDecoration: 'underline' }} onClick={handleTabClick}>{language === 'en' ? 'List of Donations/Status' : 'చందా ఇచ్చు వారి వివరాలు'}</h2>
+      <h2 style={{ fontStyle: 'italic' , textAlign: 'center', cursor: 'pointer',textDecoration: 'underline' }} onClick={()=>handleTabClick('List of Donations/Status')}>{language === 'en' ? 'Donations' : 'విరాళాలు'}</h2>
+      <h2
+          style={{ fontStyle: 'italic', textAlign: 'center', cursor: 'pointer', textDecoration: 'underline' }}
+          onClick={() => handleTabClick('memberships')}
+        >
+          {language === 'en' ? 'Memberships' : 'సభ్యత్వం'}
+        </h2>
       {loading && <p>Loading data...</p>}
       {error && <p>Error: {error}</p>}
       {data.length > 0 && (
