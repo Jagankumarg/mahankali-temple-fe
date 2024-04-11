@@ -7,18 +7,18 @@ const Estimations = (props) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [total, setTotal] = useState(0);
-
+  const newLocal = 'https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/';
   const fetchData = async () => {
     setLoading(true);
     try {
-      const response = await fetch('https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/estimations');
+      const response = await fetch(newLocal+'estimations');
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }
       const responseData = await response.json();
       setData(responseData);
      // Fetch total value
-     const totalResponse = await fetch('https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/estimationsTotal');
+     const totalResponse = await fetch(newLocal+'estimationsTotal');
      if (!totalResponse.ok) {
        throw new Error('Failed to fetch total');
      }

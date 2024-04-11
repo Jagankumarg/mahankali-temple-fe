@@ -5,20 +5,21 @@ const DataTab = ({language }) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [total, setTotal] = useState(0);
-  const [tab, setTab] = useState('List of Donations/Status');
+  /* const [tab, setTab] = useState('List of Donations/Status'); */
+  const [selectedTab, setSelectedTab] = useState(null);
  
-
+  const newLocal = 'https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/';
   const fetchData = async () => {
     setLoading(true);
     try {
-      const response = await fetch('https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/chandaDonatorsList');
+      const response = await fetch(newLocal+'chandaDonatorsList');
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }
       const responseData = await response.json();
       setData(responseData);
      // Fetch total value
-     const totalResponse = await fetch('https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/totalDonations');
+     const totalResponse = await fetch(newLocal+'totalDonations');
      if (!totalResponse.ok) {
        throw new Error('Failed to fetch total');
      }
@@ -35,14 +36,14 @@ const DataTab = ({language }) => {
   const fetchMembershipsData = async () => {
     setLoading(true);
     try {
-      const membershipsResponse = await fetch('https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/memberShips');
+      const membershipsResponse = await fetch(newLocal+'memberShips');
       if (!membershipsResponse.ok) {
         throw new Error('Failed to fetch memberships data');
       }
       const membershipsData = await membershipsResponse.json();
       setData(membershipsData);
       // Fetch total for memberships
-      const membershipsTotalResponse = await fetch('https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/membershipsTotal');
+      const membershipsTotalResponse = await fetch(newLocal+'membershipsTotal');
       if (!membershipsTotalResponse.ok) {
         throw new Error('Failed to fetch memberships total');
       }
@@ -58,16 +59,9 @@ const DataTab = ({language }) => {
     }
   };
 
-/*   const handleTabClick = () => {
-    if ( tab === 'List of Donations/Status' && data.length === 0) { // Fetch data only if it's not already fetched
-      fetchData();
-    }
-    if (tab === 'memberships' && data.length === 0) {
-      fetchMembershipsData();
-    }
-  }; */
    const handleTabClick = (tab) => {
     console.log('Tab clicked:', tab);
+    setSelectedTab(tab);
     if (tab === 'memberships') {
       fetchMembershipsData();
     } else if (tab === 'List of Donations/Status') {
@@ -78,9 +72,9 @@ const DataTab = ({language }) => {
 
   return (
     <div style={{ height: '400px', overflow: 'scroll' }}>
-      <h2 style={{ fontStyle: 'italic' , textAlign: 'center', cursor: 'pointer',textDecoration: 'underline' }} onClick={()=>handleTabClick('List of Donations/Status')}>{language === 'en' ? 'Donations' : 'విరాళాలు'}</h2>
+      <h2 style={{ fontStyle: 'italic' , textAlign: 'center',textDecoration: 'underline',cursor: 'pointer',fontWeight: selectedTab === 'List of Donations/Status' ? 'bold' : 'normal', }} onClick={()=>handleTabClick('List of Donations/Status')}>{language === 'en' ? 'Donations' : 'విరాళాలు'}</h2>
       <h2
-          style={{ fontStyle: 'italic', textAlign: 'center', cursor: 'pointer', textDecoration: 'underline' }}
+          style={{ fontStyle: 'italic', textAlign: 'center', textDecoration: 'underline',cursor: 'pointer',fontWeight: selectedTab === 'memberships' ? 'bold' : 'normal', }}
           onClick={() => handleTabClick('memberships')}
         >
           {language === 'en' ? 'Memberships' : 'సభ్యత్వం'}

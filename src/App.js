@@ -10,6 +10,7 @@ const Ribbon = ({ children }) => (
   <div className="ribbon">{children}</div>
 );
 
+const newLocal = 'https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/';
 const App = () => {
   const [showDataTab, setShowDataTab] = useState(false);
   const [showEstimationsTab, setShowEstimationsTab] = useState(false);
@@ -22,7 +23,7 @@ const App = () => {
   useEffect(() => {
     if (showEstimationsTab) {
       // Make API call for EstimationsTab
-      fetch('https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/chandaDonatorsList')
+      fetch(newLocal+'chandaDonatorsList')
         .then(response => response.json())
         .then(data => setEstimations(data))
         .catch(error => console.error('Error fetching estimations:', error));
@@ -32,7 +33,7 @@ const App = () => {
   useEffect(() => {
     if (showDataTab) {
       // Make API call for DataTab
-      fetch('https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/chandaDonatorsList')
+      fetch(newLocal+'chandaDonatorsList')
         .then(response => response.json())
         .then(data => setData(data))
         .catch(error => console.error('Error fetching data:', error));
