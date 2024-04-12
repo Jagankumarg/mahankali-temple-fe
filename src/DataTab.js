@@ -59,6 +59,32 @@ const DataTab = ({language }) => {
     }
   };
 
+  const fetchVillageDonationsData = async () => {
+    setLoading(true);
+    try {
+      const membershipsResponse = await fetch(newLocal+'villageDonations');
+      if (!membershipsResponse.ok) {
+        throw new Error('Failed to fetch memberships data');
+      }
+      const membershipsData = await membershipsResponse.json();
+      setData(membershipsData);
+      // Fetch total for memberships
+      const membershipsTotalResponse = await fetch(newLocal+'villageDonationsTotal');
+      if (!membershipsTotalResponse.ok) {
+        throw new Error('Failed to fetch memberships total');
+      }
+      const membershipsTotalData = await membershipsTotalResponse.json();
+      setTotal(membershipsTotalData.response);      
+
+      
+
+      setLoading(false);
+    } catch (error) {
+      setError(error.message);
+      setLoading(false);
+    }
+  };
+
    const handleTabClick = (tab) => {
     console.log('Tab clicked:', tab);
     setSelectedTab(tab);
@@ -66,19 +92,29 @@ const DataTab = ({language }) => {
       fetchMembershipsData();
     } else if (tab === 'List of Donations/Status') {
       fetchData();
+    } else if(tab === 'villageDonations'){
+      fetchVillageDonationsData();
     }
   }; 
 
 
   return (
     <div style={{ height: '400px', overflow: 'scroll' }}>
+      <div className="banner">
       <h2 style={{ fontStyle: 'italic' , textAlign: 'center',textDecoration: 'underline',cursor: 'pointer',fontWeight: selectedTab === 'List of Donations/Status' ? 'bold' : 'normal', }} onClick={()=>handleTabClick('List of Donations/Status')}>{language === 'en' ? 'Donations' : 'విరాళాలు'}</h2>
       <h2
           style={{ fontStyle: 'italic', textAlign: 'center', textDecoration: 'underline',cursor: 'pointer',fontWeight: selectedTab === 'memberships' ? 'bold' : 'normal', }}
           onClick={() => handleTabClick('memberships')}
         >
-          {language === 'en' ? 'Memberships' : 'సభ్యత్వం'}
+          {language === 'en' ? 'Village Memberships' : 'ఊరి సభ్యత్వాలు'}
         </h2>
+        <h2
+          style={{ fontStyle: 'italic', textAlign: 'center', textDecoration: 'underline',cursor: 'pointer',fontWeight: selectedTab === 'villageDonations' ? 'bold' : 'normal', }}
+          onClick={() => handleTabClick('villageDonations')}
+        >
+          {language === 'en' ? 'Village Donations' : 'ఊరి విరాళాలు'}
+        </h2>        
+        </div>
       {loading && <p>Loading data...</p>}
       {error && <p>Error: {error}</p>}
       {data.length > 0 && (
