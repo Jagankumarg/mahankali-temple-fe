@@ -10,8 +10,8 @@ const Ribbon = ({ children }) => (
   <div className="ribbon">{children}</div>
 );
 
-//const newLocal = 'https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/';
-const newLocal = 'http://localhost:8080/';
+const newLocal = 'https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/';
+
 const App = () => {
   const [showDataTab, setShowDataTab] = useState(false);
   const [showEstimationsTab, setShowEstimationsTab] = useState(false);
