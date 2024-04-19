@@ -12,7 +12,7 @@ const Estimations = (props) => {
 
   
   const newLocal = 'https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/';
-  
+
   const fetchData = async () => {
     setLoading(true);
     try {
@@ -84,7 +84,7 @@ const Estimations = (props) => {
       {error && <p>Error: {error}</p>}
       {selectedTab === 'estimations' && data.length > 0 && (
         <div>
-          <table>
+           <table style={{ minWidth: '250px', tableLayout: 'fixed', width: '250%'}}>
             <thead>
               <tr>
                 <th style={{ border: '1px solid black', padding: '8px' }}>Sl No</th>
@@ -118,7 +118,7 @@ const Estimations = (props) => {
 
 {selectedTab === 'expenses' && expensesData.length > 0  && (
         <div>
-          <table>
+          <table style={{ minWidth: '250px', tableLayout: 'fixed', width: '250%'}}>
             <thead>
               <tr>
                 <th style={{ border: '1px solid black', padding: '8px' }}>Sl No</th>
