@@ -122,7 +122,7 @@ const Estimations = (props) => {
             <thead>
               <tr>
                 <th style={{ border: '1px solid black', padding: '8px' }}>Sl No</th>
-                <th style={{ border: '1px solid black', padding: '8px' }}>Date</th>
+                <th style={{ border: '1px solid black', padding: '10px' }}>Date</th>
                 <th style={{ border: '1px solid black', padding: '8px' }}>Purpose</th>
                 <th style={{ border: '1px solid black', padding: '8px' }}>Amount</th>
                 <th style={{ border: '1px solid black', padding: '8px' }}>Comments</th>
@@ -136,7 +136,7 @@ const Estimations = (props) => {
               {expensesData.map(item => (
                 <tr key={item.id}>
                   <td style={{ border: '1px solid black', padding: '8px' }}>{item.id}</td>
-                  <td style={{ border: '1px solid black', padding: '8px' }}>{item.date}</td>
+                  <td style={{ border: '1px solid black', padding: '10px' }}>{item.date}</td>
                   <td style={{ border: '1px solid black', padding: '8px' }}>{item.purpose}</td>
                   <td style={{ border: '1px solid black', padding: '8px' }}>{item.amount}</td>
                   <td style={{ border: '1px solid black', padding: '8px' }}>{item.comments}</td>
