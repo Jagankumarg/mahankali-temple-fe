@@ -8,6 +8,7 @@ const DataTab = ({language }) => {
   /* const [tab, setTab] = useState('List of Donations/Status'); */
   const [selectedTab, setSelectedTab] = useState(null);
  
+  //const newLocal = 'http://localhost:8080/';
   const newLocal = 'https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/';
   const fetchData = async () => {
     setLoading(true);
