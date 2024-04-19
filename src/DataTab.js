@@ -10,6 +10,7 @@ const DataTab = ({language }) => {
  
   
   const newLocal = 'https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/';
+
   const fetchData = async () => {
     setLoading(true);
     try {
@@ -102,7 +103,9 @@ const DataTab = ({language }) => {
   return (
     <div style={{ height: '400px', overflow: 'scroll' }}>
       <div className="banner">
-      <h2 style={{ fontStyle: 'italic' , textAlign: 'center',textDecoration: 'underline',cursor: 'pointer',fontWeight: selectedTab === 'List of Donations/Status' ? 'bold' : 'normal', }} onClick={()=>handleTabClick('List of Donations/Status')}>{language === 'en' ? 'Donations' : 'విరాళాలు'}</h2>
+      <h2 
+          style={{ fontStyle: 'italic' , textAlign: 'center',textDecoration: 'underline',cursor: 'pointer',fontWeight: selectedTab === 'List of Donations/Status' ? 'bold' : 'normal', }} 
+          onClick={()=>handleTabClick('List of Donations/Status')}>{language === 'en' ? 'Donations' : 'విరాళాలు'}</h2>
       <h2
           style={{ fontStyle: 'italic', textAlign: 'center', textDecoration: 'underline',cursor: 'pointer',fontWeight: selectedTab === 'memberships' ? 'bold' : 'normal', }}
           onClick={() => handleTabClick('memberships')}

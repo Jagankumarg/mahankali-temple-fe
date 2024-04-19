@@ -12,6 +12,7 @@ const Ribbon = ({ children }) => (
 
 const newLocal = 'https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/';
 
+
 const App = () => {
   const [showDataTab, setShowDataTab] = useState(false);
   const [showEstimationsTab, setShowEstimationsTab] = useState(false);

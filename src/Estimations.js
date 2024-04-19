@@ -12,6 +12,7 @@ const Estimations = (props) => {
 
   
   const newLocal = 'https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/';
+  
   const fetchData = async () => {
     setLoading(true);
     try {
@@ -74,6 +75,7 @@ const Estimations = (props) => {
 
   return (
     <div style={{ height: '400px', overflow: 'scroll' }}>
+        <div className="banner">
      <h2 style={{ fontStyle: 'italic',textDecoration: 'underline', cursor: 'pointer',fontWeight: selectedTab === 'estimations' ? 'bold' : 'normal', }} 
       onClick={()=>handleTabClick('estimations')}>{language === 'en' ? 'Construction Estimations' : 'గుడి నిర్మాణ వ్యయం అంచనా'}</h2>
       <h2 style={{ fontStyle: 'italic',textDecoration: 'underline', cursor: 'pointer',fontWeight: selectedTab === 'expenses' ? 'bold' : 'normal', }} 
@@ -153,6 +155,7 @@ const Estimations = (props) => {
           </table>
         </div>
       )}
+      </div>
     </div>
   );
 };
