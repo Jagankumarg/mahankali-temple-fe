@@ -2,7 +2,7 @@
 export const translationsEN = {
     title: "Nuvvulabanda Mahankali Temple Construction Details",
     chandaCollection: "Chanda Collection",
-    constructionEstimations: "Construction Estimations",
+    constructionEstimations: "Construction Details",
     amount: "Amount Details",
     errorFetchingEstimations: "Error fetching estimations:",
     errorFetchingData: "Error fetching data:",
