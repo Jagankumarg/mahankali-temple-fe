@@ -11,7 +11,8 @@ const Estimations = (props) => {
   const [selectedTab, setSelectedTab] = useState(null);
 
   
-  const newLocal = 'https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/';
+  //const newLocal = 'https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/';
+  const newLocal = 'http://localhost:8080/';
 
 
 

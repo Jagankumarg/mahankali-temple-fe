@@ -95,6 +95,7 @@ const AmountDetails = ({language }) => {
                     <th style={{ border: '1px solid black', textAlign: 'center', padding: '8px' }}>Name</th>
                     <th style={{ border: '1px solid black', textAlign: 'center', padding: '8px' }}>Amount</th>
                     <th style={{ border: '1px solid black', textAlign: 'center', padding: '8px' }}>Taken By</th>
+                    <th style={{ border: '1px solid black', textAlign: 'center', padding: '8px' }}>Date</th>
                     {/* Add more columns as needed */}
                   </tr>
                 </thead>
@@ -105,6 +106,7 @@ const AmountDetails = ({language }) => {
                       <td style={{ border: '1px solid black', textAlign: 'center' , padding: '8px',wordWrap: 'break-word', whiteSpace: 'normal'}}>{item.name}</td>
                       <td style={{ border: '1px solid black', textAlign: 'center' , padding: '8px',wordWrap: 'break-word', whiteSpace: 'normal'}}>{item.amount}</td>
                       <td style={{ border: '1px solid black', textAlign: 'center' , padding: '8px',wordWrap: 'break-word', whiteSpace: 'normal'}}>{item.takenBy}</td>
+                      <td style={{ border: '1px solid black', textAlign: 'center' , padding: '8px',wordWrap: 'break-word', whiteSpace: 'normal'}}>{item.takenDate}</td>
                       {/* Add more cells as needed */}
                     </tr>
                   ))}
