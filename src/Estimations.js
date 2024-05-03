@@ -11,10 +11,8 @@ const Estimations = (props) => {
   const [selectedTab, setSelectedTab] = useState(null);
 
   
-  //const newLocal = 'https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/';
-  const newLocal = 'http://localhost:8080/';
-
-
+  const newLocal = 'https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/';
+  
 
   const fetchData = async () => {
     setLoading(true);
@@ -87,8 +85,8 @@ const Estimations = (props) => {
       {error && <p>Error: {error}</p>}
       {selectedTab === 'estimations' && data.length > 0 && (
         <div>
-           <table style={{ minWidth: '250px', tableLayout: 'fixed', width: '250%'}}>
-            <thead>
+           <table style={{ minWidth: '150px', tableLayout: 'auto', width: '150%'}}>
+           <thead style={{ position: 'sticky', top: 0, backgroundColor: 'grey' }}>
               <tr>
                 <th style={{ border: '1px solid black', padding: '8px' }}>Sl No</th>
                 <th style={{ border: '1px solid black', padding: '8px' }}>Purpose</th>
@@ -110,7 +108,7 @@ const Estimations = (props) => {
               <tr>
                 <td style={{ border: '1px solid black', padding: '8px' }} colSpan="2">Total</td>
                 <td style={{ border: '1px solid black', padding: '8px' }}>{total}</td>
-                <td style={{ border: '1px solid black', padding: '8px' }} colSpan="3"></td>
+                
               </tr>
             </tbody>
           </table>
@@ -121,8 +119,8 @@ const Estimations = (props) => {
 
 {selectedTab === 'expenses' && expensesData.length > 0  && (
         <div>
-          <table style={{ minWidth: '250px', tableLayout: 'fixed', width: '250%'}}>
-            <thead>
+         <table style={{ minWidth: '150px', tableLayout: 'auto', width: '150%'}}>
+          <thead style={{ position: 'sticky', top: 0, backgroundColor: 'grey' }}>
               <tr>
                 <th style={{ border: '1px solid black', padding: '8px' }}>Sl No</th>
                 <th style={{ border: '1px solid black', padding: '10px' }}>Date</th>
@@ -152,7 +150,7 @@ const Estimations = (props) => {
               <tr>
                 <td style={{ border: '1px solid black', padding: '8px' }} colSpan="3">Total</td>
                 <td style={{ border: '1px solid black', padding: '8px' }}>{total}</td>
-                <td style={{ border: '1px solid black', padding: '8px' }} colSpan="3"></td>
+                
               </tr>
             </tbody>
           </table>

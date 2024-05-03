@@ -125,7 +125,7 @@ const DataTab = ({language }) => {
         <div>
           <table style={{ minWidth: '250px', tableLayout: 'fixed', width: '250%'}}>
           
-            <thead>
+          <thead style={{ position: 'sticky', top: 0, backgroundColor: 'grey' }}>
               <tr>
                 <th style={{ border: '1px solid black' , textAlign: 'center', padding: '8px'}}>Sl no</th>
                 <th style={{ border: '1px solid black', textAlign: 'center', padding: '8px' }}>Name</th>

@@ -11,6 +11,7 @@ const AmountDetails = ({language }) => {
 
 
     const newLocal = 'https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/';
+   
 
     
 
@@ -89,7 +90,7 @@ const AmountDetails = ({language }) => {
             <div>
               <table style={{ minWidth: '150px', tableLayout: 'auto', width: '150%'}}>
               
-                <thead>
+                <thead style={{ position: 'sticky', top: 0, backgroundColor: 'grey' }}>
                   <tr>
                     <th style={{ border: '1px solid black' , textAlign: 'center', padding: '8px'}}>Sl no</th>
                     <th style={{ border: '1px solid black', textAlign: 'center', padding: '8px' }}>Name</th>
@@ -122,9 +123,9 @@ const AmountDetails = ({language }) => {
 
 { selectedTab === 'amountDetails' && templeData.length > 0 && (
             <div>
-              <table style={{ minWidth: '250px', tableLayout: 'fixed', width: '250%'}}>
+              <table style={{ minWidth: '150px', tableLayout: 'auto', width: '150%'}}>
               
-                <thead>
+              <thead style={{ position: 'sticky', top: 0, backgroundColor: 'grey' }}>
                   <tr>
                     <th style={{ border: '1px solid black' , textAlign: 'center'}}>Sl no</th>
                     <th style={{ border: '1px solid black', textAlign: 'center' }}>Name</th>
@@ -144,7 +145,6 @@ const AmountDetails = ({language }) => {
                   <tr>
                   <td style={{ border: '1px solid black', textAlign: 'center'}} colSpan="2">Total</td>
                   <td style={{ border: '1px solid black', textAlign: 'center' }}>{total}</td>
-                  <td style={{ border: '1px solid black', textAlign: 'center' }} colSpan="1"></td>
                   </tr>
                 </tbody>
               </table>
