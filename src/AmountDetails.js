@@ -90,13 +90,14 @@ const AmountDetails = ({language }) => {
             <div>
               <table style={{ minWidth: '150px', tableLayout: 'auto', width: '150%'}}>
               
+              
                 <thead style={{ position: 'sticky', top: 0, backgroundColor: 'grey' }}>
                   <tr>
-                    <th style={{ border: '1px solid black' , textAlign: 'center', padding: '8px'}}>Sl no</th>
-                    <th style={{ border: '1px solid black', textAlign: 'center', padding: '8px' }}>Name</th>
-                    <th style={{ border: '1px solid black', textAlign: 'center', padding: '8px' }}>Amount</th>
-                    <th style={{ border: '1px solid black', textAlign: 'center', padding: '8px' }}>Taken By</th>
-                    <th style={{ border: '1px solid black', textAlign: 'center', padding: '8px' }}>Date</th>
+                    <th style={{ border: '1px solid black', textAlign: 'center'}}>Sl no</th>
+                    <th style={{ border: '1px solid black', textAlign: 'center' }}>Name</th>
+                    <th style={{ border: '1px solid black', textAlign: 'center' }}>Amount</th>
+                    <th style={{ border: '1px solid black', textAlign: 'center' }}>Taken By</th>
+                    <th style={{ border: '1px solid black', textAlign: 'center' }}>Date</th>
                     {/* Add more columns as needed */}
                   </tr>
                 </thead>
