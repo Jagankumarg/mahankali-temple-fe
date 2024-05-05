@@ -125,7 +125,7 @@ const AmountDetails = ({ language }) => {
 
       {selectedTab === 'amountDetails' && templeData.length > 0 && (
         <div>
-          <table style={{ minWidth: '150px', tableLayout: 'auto', width: '150%' }}>
+           <table style={{ minWidth: '250px', tableLayout: 'fixed', width: '250%'}}>
 
             <thead style={{ position: 'sticky', top: 0, backgroundColor: 'grey' }}>
               <tr>
