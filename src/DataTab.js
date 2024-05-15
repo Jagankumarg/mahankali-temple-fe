@@ -11,6 +11,7 @@ const DataTab = ({language }) => {
   
   const newLocal = 'https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/';
 
+
   const fetchData = async () => {
     setLoading(true);
     try {
