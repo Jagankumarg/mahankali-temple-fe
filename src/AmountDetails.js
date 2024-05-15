@@ -10,6 +10,7 @@ const AmountDetails = ({ language }) => {
 
 
 
+
   const newLocal = 'https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/';
 
 
@@ -177,7 +178,7 @@ const AmountDetails = ({ language }) => {
 
 {selectedTab === 'nettAmount' && total > 0 && (
         <div>
-           <table style={{ minWidth: '250px', tableLayout: 'fixed', width: '250%'}}>
+           <table style={{ minWidth: '50px', tableLayout: 'auto', width: '50%'}}>
 
             <thead style={{ position: 'sticky', top: 0, backgroundColor: 'grey' }}>
               <tr>
