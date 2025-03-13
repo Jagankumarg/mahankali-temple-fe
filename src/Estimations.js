@@ -12,7 +12,7 @@ const Estimations = (props) => {
 
   
   
-  const newLocal = 'https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/';
+  const newLocal = 'https://mahankali-temple-1f95132ebff6.herokuapp.com/';
   
 
   const fetchData = async () => {
