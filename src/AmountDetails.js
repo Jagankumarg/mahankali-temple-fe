@@ -11,7 +11,7 @@ const AmountDetails = ({ language }) => {
 
 
 
-  const newLocal = 'https://mahanakali-temple-ba20bcfbcbac.herokuapp.com/';
+  const newLocal = 'https://mahankali-temple-1f95132ebff6.herokuapp.com/';
 
 
 
